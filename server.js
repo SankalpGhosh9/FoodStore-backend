@@ -7,6 +7,10 @@ app.use(cors()); // Allow cross-origin requests
 app.use(bodyParser.json());
 
 // Handle form submissions
+app.get('/',(req, res)=>{
+    res.status(200).json({ message: 'Backend working successfully!' });
+})
+
 app.post('/api/place-order', (req, res) => {
   const orderData = req.body;
   console.log('Order received:', orderData);
